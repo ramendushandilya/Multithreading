@@ -1,0 +1,64 @@
++ Sequential Processing
+    : When the tasks are performed in a sequence, meaning when another task is taken up by the cpu only when one task
+      finishes is called Sequential processing. It's slow and doesn't make sense when we have multiple CPUs available.
+
++ Thread
+    : Threads are light weight processes and are self contained. Threads are faster than normal processes. The context
+      switching between the threads is faster than the context switching in the processes.
+
++ Ways to start Threads
+    : By implementing the Runnable interface
+    : By extending the Thread method
+    : In both the cases we call the start method on the thread object to start the thread execution
+
++ join()
+    : When we want the parent thread to wait for the execution over the thread we call the join method on the child
+      thread. Once the join() method is called on the thread, the parent thread waits for the thread execution to be
+      over and then the parent thread carries on with the rest of the instructions in the program.
+
++ Volatile
+    : Usually as a part of the performance enhancement the variables are stored in the caches for faster reads
+      When we don't want this behavior we use the Java volatile keyword to force java to not read the variables from the
+      caches rather read them from the RAM. Volatile shouldn't be used when it's not necessary since it's a major way
+      to enhance the performance of a program
+
++ Deadlock
+    : Deadlock is a situation in which two or more threads are waiting for the another one to finish and thus neither
+      one never does it's finishing it's task
+    : In the situation of the deadlock two processes wait for each other on some resource, and hence both are blocked
+
++ Livelock
+    : A thread often works in response to the action of the other thread.
+    : If the response of the other thread is also the action of the first thread, then the live lock occurs
+    : Here in this case the threads are not blocked, they are simply too busy responding to the other thread to resume
+      work
+    : For example two people trying to pass in a narrow corridor and they both moving in the same direction to give each
+      other a way to pass
+
++ Reentrant Lock v/s Synchronised Blocks
+    : Reentrant Locks have the same basic features as a synchronised block, along with some extra added features
+    : We can make a lock fair, prevent thread starvation. Synchronised blocks are unfair by default
+    : We can check if a given lock is held or not with reentrant locks
+    : We can get the list of threads waiting for the given thread with reentrant locks
+    : Synchronised blocks are nicer we don't need to use and try catch finally
+
++ Semaphores
+    : Invented by Dijkstra
+    : Semaphores are ADT that used to for controlling access to a common resource
+    : Semaphores is a record of how many units of a particular resource are available
+    : Counting semaphores allows an arbitrary resource count
+    : Binary Semaphores are restricted to the values 0 and 1
+    : Semaphores track only how many resources are free, it doesn't keep track of which resources are free
+    : The semaphore count may serve as an important trigger for a number of different actions
+    : Producer consumer problem can be implemented using Semaphore
+
++ Mutex
+    : A Mutex is essentially the same thing as a binary Semaphore
+    : While a binary Semaphore may be used as a mutex, a mutex is a more specific use case
+    : Mutexes have a concept of an owner, only the process that locked the mutex is supposed to unlock it
+    : Mutexes may provide priority inversion safety.
+    : If the Mutex knows its current owner, it's possible to promote the priority of the owner whenever a high
+      priority task starts waiting on the mutex
+    : Mutex can provide deletion safety
+
+

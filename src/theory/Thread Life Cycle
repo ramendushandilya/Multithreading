@@ -1,0 +1,18 @@
+Below are the Thread Life Cycles
+
++ New
+    : When we instantiate a thread it's in the new state until we call the start() method to start it.
+
++ Runnable
+    : After we start the thread, it's in the runnable state. The thread is executing it's task in this
+      state.
+
++ Running
+    : When the thread is in this state it's doing its task.
+
++ Waiting
+    : When a thread is waiting for another thread for example to finish its task, it's in the waiting state.
+
++ Dead
+    : When the thread completes its task it goes into this state. When a thread is dead, it's simply dead
+      it can't do anything now.
